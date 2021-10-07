@@ -25,18 +25,18 @@ end
 
 # 4. handle commençant par une majuscule
 def upcase(list)
-    puts "Appuye sur entrée pour afficher les handle commençant par une majuscule, classé par ordre alphabétique"
+    puts "Appuye sur entrée pour afficher le nombre de handle commençant par une majuscule"
     gets.chomp
-    list.sort.select { |a| a[1] == a[1].upcase}
-    return list.sort.select { |a| a[1] == a[1].upcase}
+    list_upcase = list.sort.select { |a| a[1] == a[1].upcase}
+    return list_upcase.length
 end
 
 # 5. trier les handle par ordre alphabétique
 def alphabet(list)
     puts "Appuye sur entrée pour trier les handle par ordre alphabétique"
     gets.chomp
-    list.sort
-    return list.sort
+    list.sort_by(&:downcase)
+    return list.sort_by(&:downcase)
 end
 
 # 6. liste triée du plus petit handle au plus grand
